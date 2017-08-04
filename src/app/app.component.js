@@ -1,19 +1,12 @@
 (function (app) {
   app.AppComponent = ng.core.Component({
     selector: 'my-app', //Application Name
-    template: `
-        <div>
-          <label>name: </label>
-          <input [(ngModel)]="name" placeholder="name"/>
-        </div>
-        <p *ngIf="name">
-          Hello <b>{{name}}</b>, how is your day.
-        </p>
-      `
+    template: '<input type="text" placeholder="Name" name="name" [(ngModel)]="name">' +
+              '<p *ngIf="name">Hello {{name}}, are you OK?'
   })
     .Class({
       constructor: function () {
-        this.name = "max";
+        this.name = "";
       }
     });
 })(window.app || (window.app = {}));
